@@ -10,6 +10,11 @@ namespace CifradoDescifrado
     class Descifrado
     {
 
+        /// <summary>
+        /// Método que manda a llamar a los métodos "Aclarar", separar la cadena cifrada en un arreglo y mandarselo al método "ConvertirACaracter"
+        /// </summary>
+        /// <param name="cifrado"></param>
+        /// <returns></returns>
         public static string Descifrar(string cifrado)
         {
             cifrado = Aclarar(cifrado);
@@ -33,6 +38,11 @@ namespace CifradoDescifrado
             return resultado;
         }
 
+        /// <summary>
+        /// Método que convierte el arreglo de strings a carácteres para ser mostrados
+        /// </summary>
+        /// <param name="arreglo">Arreglo que se va a convertir a carácteres</param>
+        /// <returns>Regresa la cadena descifrada</returns>
         private static string ConvertirACaracter(String[] arreglo)
         {
             var contrasenaDescifrada = new StringBuilder();
@@ -46,6 +56,11 @@ namespace CifradoDescifrado
             return contrasenaDescifrada.ToString();
         }
 
+        /// <summary>
+        /// Método que quita el incio y el fin para poder comenzar el descifrado
+        /// </summary>
+        /// <param name="cifrado">Recibe la cadena cifrada</param>
+        /// <returns>Regresa la cadena cifrada "limpia" para proseguir con el descifrado</returns>
         private static string Aclarar(string cifrado)
         {
             var arregloCaracteres = cifrado.ToCharArray();
